@@ -1,0 +1,7 @@
+#for all projects in solution
+**/bin/
+**/obj/
+**/.idea/
+
+# Rider / ReSharper user settings
+*.DotSettings.user
