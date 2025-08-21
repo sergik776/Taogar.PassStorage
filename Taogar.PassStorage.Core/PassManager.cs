@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using System.Text;
 
 namespace Taogar.PassStorage.Core;
@@ -93,8 +94,17 @@ public class PassManager
         if(key == null) Console.WriteLine("Password name can not be null");
         if (storage.TryGetValue(key, out var encryptedValue))
         {
-            Utils.CopyToClipboard(_rsaDecryptor.DecryptWithPemKey(encryptedValue));
-            return $"{key} - has been copied to clipboard";
+            var pass = _rsaDecryptor.DecryptWithPemKey(encryptedValue);
+            if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
+            {
+                Console.WriteLine("Copy to clipboard not implemented on Windows platform. Pass will print below:");
+                return pass;
+            }
+            else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
+            {
+                Utils.CopyToClipboardOnLinux(pass);
+                return $"{key} - has been copied to clipboard";
+            }
         }
         Console.WriteLine("Password not found");
         return null;

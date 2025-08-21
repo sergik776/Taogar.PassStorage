@@ -11,7 +11,7 @@ public static class Utils
     /// Copy to clipboard
     /// </summary>
     /// <param name="text">Text for copy</param>
-    public static void CopyToClipboard(string text)
+    public static void CopyToClipboardOnLinux(string text)
     {
         var psi = new ProcessStartInfo()
         {

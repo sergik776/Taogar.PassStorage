@@ -1,3 +1,5 @@
+using System.Runtime.InteropServices;
+
 namespace Taogar.PassStorage.Core;
 
 /// <summary>
@@ -8,11 +10,11 @@ public class Config
     /// <summary>
     /// Path to folder with configurations of application
     /// </summary>
-    public static string ConfigFolder = $"/home/{Environment.UserName}/.config/binstorage";
+    public static string ConfigFolder;
     /// <summary>
     /// Path to file with configurations of application
     /// </summary>
-    public static string ConfigFile = $"{ConfigFolder}/configuration.json";
+    public static string ConfigFile;
     /// <summary>
     /// Path to public key
     /// </summary>
@@ -25,4 +27,10 @@ public class Config
     /// Path to binary file
     /// </summary>
     public string StorageBinPath  { get; set; } = String.Empty;
+
+    static Config()
+    {
+        ConfigFolder = Environment.GetFolderPath(Environment.SpecialFolder.LocalApplicationData) + "/binstorage";
+        ConfigFile = $"{ConfigFolder}/configuration.json";
+    }
 }
