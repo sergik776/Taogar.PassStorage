@@ -1,5 +1,6 @@
 using System.Runtime.InteropServices;
 using System.Text;
+using TextCopy;
 
 namespace Taogar.PassStorage.Core;
 
@@ -97,8 +98,8 @@ public class PassManager
             var pass = _rsaDecryptor.DecryptWithPemKey(encryptedValue);
             if (RuntimeInformation.IsOSPlatform(OSPlatform.Windows))
             {
-                Console.WriteLine("Copy to clipboard not implemented on Windows platform. Pass will print below:");
-                return pass;
+                new Clipboard().SetText(pass);
+                return $"{key} - has been copied to clipboard";
             }
             else if (RuntimeInformation.IsOSPlatform(OSPlatform.Linux))
             {
