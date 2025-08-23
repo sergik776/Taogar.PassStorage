@@ -1,4 +1,4 @@
-# This is soft for store key on your PC in encrypted binary format.<br>
+# This is soft for store passwords on your PC in encrypted binary format.<br>
 **Encryption by public RSA key and decryption by private RSA key.<br><br>**
 
 For start ro use it to have to make PEM key
