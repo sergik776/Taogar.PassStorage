@@ -1,3 +1,4 @@
+using System.Runtime.InteropServices;
 using CommandLine;
 using Taogar.PassStorage.Core;
 using Taogar.PassStorage.Core.Commands;
