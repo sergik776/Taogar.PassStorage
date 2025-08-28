@@ -32,7 +32,7 @@ public class SmartRSADecryptor
         _conf =  conf;
         _passwordCallback = passwordCallback ?? (() => 
         {
-            Console.Write($"Введите пароль для приватного ключа [{Path.GetFileName(_conf.PrivKeyPath)}]: ");
+            Console.Write($"Enter password for private key [{Path.GetFileName(_conf.PrivKeyPath)}]: ");
             return Utils.ReadPassword();
         });
     }

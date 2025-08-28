@@ -1,7 +1,9 @@
 # This is soft for store passwords on your PC in encrypted binary format.<br>
 **Encryption by public RSA key and decryption by private RSA key.<br><br>**
 
-For start ro use it to have to make PEM key
+[![View GIF](assets/preview.png)](assets/instruction.gif)<br><br>
+
+For start ro use it to have to make PEM key<br>
 You can create new key by next instruction:<br>
 
 Generate new RSA key and convert in to PEM<br>
