@@ -2,7 +2,6 @@
 **Encryption by public RSA key and decryption by private RSA key.<br><br>**
 
 ![PreView](assets/preview.png)<br>
-![Instruction](assets/instruction.gif)<br>
 
 For start ro use it to have to make PEM key<br>
 You can create new key by next instruction:<br>
